@@ -2,17 +2,17 @@ import Link from "next/link";
 
 const footerLinks = {
   Services: [
-    { label: "Web Design", href: "#services" },
-    { label: "Web Development", href: "#services" },
-    { label: "SaaS Development", href: "#services" },
+    { label: "Web Design", href: "/services" },
+    { label: "Web Development", href: "/services" },
+    { label: "SaaS Development", href: "/services" },
   ],
   Products: [
-    { label: "LipaPoint POS", href: "https://lipapoint.tunzaassets.co.ke", external: true },
-    { label: "TunzaAssets", href: "https://tunzaassets.co.ke", external: true },
+    { label: "LipaPoint POS", href: "/products" },
+    { label: "TunzaAssets", href: "/products" },
   ],
   Company: [
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ],
 };
 
@@ -46,15 +46,9 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      {...("external" in link && link.external
-                        ? { target: "_blank", rel: "noopener noreferrer" }
-                        : {})}
                       className="text-sm text-muted hover:text-foreground transition-colors"
                     >
                       {link.label}
-                      {"external" in link && link.external && (
-                        <span className="ml-1 text-xs">&#8599;</span>
-                      )}
                     </Link>
                   </li>
                 ))}
@@ -69,10 +63,16 @@ export default function Footer() {
             reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="#" className="text-sm text-muted hover:text-foreground transition-colors">
+            <Link
+              href="#"
+              className="text-sm text-muted hover:text-foreground transition-colors"
+            >
               Privacy Policy
             </Link>
-            <Link href="#" className="text-sm text-muted hover:text-foreground transition-colors">
+            <Link
+              href="#"
+              className="text-sm text-muted hover:text-foreground transition-colors"
+            >
               Terms of Service
             </Link>
           </div>

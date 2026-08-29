@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SectionHeader from "./SectionHeader";
 
 const values = [
   {
@@ -23,15 +22,10 @@ const values = [
 
 export default function About() {
   return (
-    <section id="about" className="py-32 px-6">
+    <section className="py-16 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <SectionHeader
-              number="03"
-              title="About Us"
-              subtitle="We're a small but mighty team passionate about building great software."
-            />
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

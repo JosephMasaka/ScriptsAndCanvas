@@ -74,13 +74,13 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
-            href="#products"
+            href="/products"
             className="px-8 py-4 bg-accent hover:bg-accent-light text-white rounded-full text-sm font-medium transition-colors duration-200"
           >
             View Our Work
           </Link>
           <Link
-            href="#contact"
+            href="/contact"
             className="px-8 py-4 border border-card-border hover:border-muted text-foreground rounded-full text-sm font-medium transition-colors duration-200"
           >
             Start a Project

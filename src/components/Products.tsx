@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import SectionHeader from "./SectionHeader";
 
 const products = [
   {
@@ -29,13 +28,8 @@ const products = [
 
 export default function Products() {
   return (
-    <section id="products" className="py-32 px-6 bg-card/30">
+    <section className="py-16 px-6">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader
-          number="02"
-          title="Our Products"
-          subtitle="SaaS products we've built and launched — solving real problems for real businesses."
-        />
 
         <div className="space-y-12">
           {products.map((product, i) => (

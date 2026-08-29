@@ -2,7 +2,6 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
-import SectionHeader from "./SectionHeader";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -35,13 +34,8 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-32 px-6 bg-card/30">
+    <section className="py-16 px-6">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader
-          number="04"
-          title="Let's Work Together"
-          subtitle="Have a project in mind? We'd love to hear about it. Drop us a message and we'll get back to you."
-        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <motion.form

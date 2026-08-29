@@ -3,23 +3,29 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Products", href: "#products" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/services" },
+  { label: "Products", href: "/products" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <motion.header
@@ -47,13 +53,17 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-muted hover:text-foreground transition-colors duration-200"
+              className={`text-sm transition-colors duration-200 ${
+                pathname === link.href
+                  ? "text-foreground font-medium"
+                  : "text-muted hover:text-foreground"
+              }`}
             >
               {link.label}
             </Link>
           ))}
           <Link
-            href="#contact"
+            href="/contact"
             className="px-5 py-2 bg-accent hover:bg-accent-light text-white text-sm rounded-full transition-colors duration-200"
           >
             Get in Touch
@@ -93,15 +103,17 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg text-muted hover:text-foreground transition-colors"
+                  className={`text-lg transition-colors ${
+                    pathname === link.href
+                      ? "text-foreground font-medium"
+                      : "text-muted hover:text-foreground"
+                  }`}
                 >
                   {link.label}
                 </Link>
               ))}
               <Link
-                href="#contact"
-                onClick={() => setIsOpen(false)}
+                href="/contact"
                 className="mt-2 px-5 py-3 bg-accent text-white text-center rounded-full"
               >
                 Get in Touch

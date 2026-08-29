@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SectionHeader from "./SectionHeader";
 
 const services = [
   {
@@ -62,13 +61,8 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-32 px-6">
+    <section className="py-16 px-6">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader
-          number="01"
-          title="What We Do"
-          subtitle="Code, performance, and design working together. Without compromise."
-        />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, i) => (
