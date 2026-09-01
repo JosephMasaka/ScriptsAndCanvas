@@ -106,6 +106,7 @@ export default function Contact() {
                 <option value="web-design">Web Design</option>
                 <option value="web-development">Web Development</option>
                 <option value="saas-development">SaaS Development</option>
+                <option value="ai-agentic">AI & Agentic Workflows</option>
                 <option value="other">Other</option>
               </select>
             </div>

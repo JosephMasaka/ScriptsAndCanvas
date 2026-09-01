@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { label: "Services", href: "/services" },
@@ -62,6 +63,7 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <ThemeToggle />
           <Link
             href="/contact"
             className="px-5 py-2 bg-accent hover:bg-accent-light text-white text-sm rounded-full transition-colors duration-200"

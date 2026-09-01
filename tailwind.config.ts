@@ -6,16 +6,17 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        background: "#0a0a0a",
-        foreground: "#ededed",
-        accent: "#6d28d9",
-        "accent-light": "#8b5cf6",
-        muted: "#a1a1aa",
-        card: "#141414",
-        "card-border": "#262626",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        accent: "var(--accent)",
+        "accent-light": "var(--accent-light)",
+        muted: "var(--muted)",
+        card: "var(--card)",
+        "card-border": "var(--card-border)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
