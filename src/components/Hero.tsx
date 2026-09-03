@@ -40,7 +40,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-card-border bg-card/50 backdrop-blur-sm mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          <span className="text-sm text-muted">Available for projects</span>
+          {/*<span className="text-sm text-muted">Available for projects</span>*/}
         </motion.div>
 
         <motion.h1
